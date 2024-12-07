@@ -1,7 +1,7 @@
 import requests
 
 def generate_reply(complaint, labels, website_under_maintainence = False):
-    api_key = 'AIzaSyBd2_eWwC8qeaDTajYIIEKnM-ZBkF_gmHI'
+    api_key = 'ADD YOUR API KEY and I'll HIDE MINE'
     gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={api_key}"
     headers = {
         "Content-Type": "application/json"
