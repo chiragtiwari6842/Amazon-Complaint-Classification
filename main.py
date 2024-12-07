@@ -8,7 +8,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
 from classify import classify_into_categories
-from check_labels import check_complaint_labels
 from reply import generate_reply
 
 def main():
@@ -54,13 +53,8 @@ def main():
         return None
     
     complaint = complaint_text
-    actual_labels = classify_into_categories(complaint)
+    labels = classify_into_categories(complaint)
 
-    result, updated_labels = check_complaint_labels(complaint, actual_labels)
-    if result == "No":
-        labels = updated_labels
-    elif result == "Yes":
-        labels = actual_labels
     reply = generate_reply(complaint, labels)
 
     time.sleep(3)
